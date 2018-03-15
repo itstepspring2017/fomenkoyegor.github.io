@@ -2,8 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45afe566-2290-4999-941e-dd661c500df7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/1.psd" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/css/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/fav.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/Search-Icon-hover.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/Search-Icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/beforblock1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_Kp.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_Sp.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_body.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_bottom.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_btnNext.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_btnPreview.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_contH2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_dotted.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_dotted2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_header.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_lineH2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_linebody.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_linetop.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_menu.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_menu2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_menu3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_pstar.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_search.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_slider.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_sliderFone.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_sliderFone2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_sliderFone3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_sliderFone4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_star.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/bg_top.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/block.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/block2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/block3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/cos.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/fbottom.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/footD.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/footdotted.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/kp2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/left.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/polosa.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/polosa1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/polosa2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/polosa3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/polosa4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/polosaLeft.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/polosaRight.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/right.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/sprite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/img/werwer.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maket/index.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -114,12 +165,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521081055703</updated>
-      <workItem from="1521081057070" duration="111000" />
+      <workItem from="1521081057070" duration="472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111000" />
+    <option name="totallyTimeSpent" value="472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
