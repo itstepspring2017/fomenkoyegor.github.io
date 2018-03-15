@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="45afe566-2290-4999-941e-dd661c500df7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/maket/index.html" afterPath="$PROJECT_DIR$/maket/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/maket/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="49" column="70" lean-forward="false" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
+            <state relative-caret-position="266">
+              <caret line="46" column="34" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -149,7 +148,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521081055703</updated>
-      <workItem from="1521081057070" duration="1525000" />
+      <workItem from="1521081057070" duration="1729000" />
     </task>
     <task id="LOCAL-00001" summary="rergerg">
       <created>1521081764382</created>
@@ -172,11 +171,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521082039954</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add some">
+      <created>1521082603632</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1521082603635</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1525000" />
+    <option name="totallyTimeSpent" value="1729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -211,7 +217,8 @@
     <MESSAGE value="rergerg" />
     <MESSAGE value="retrosit href" />
     <MESSAGE value="retrosit hrefdv" />
-    <option name="LAST_COMMIT_MESSAGE" value="retrosit hrefdv" />
+    <MESSAGE value="add some" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -228,8 +235,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/maket/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="49" column="70" lean-forward="false" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
+        <state relative-caret-position="266">
+          <caret line="46" column="34" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
           <folding />
         </state>
       </provider>
