@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+           margin: 0;padding: 0
+        }
+        #canvas {
+            border: 1px solid black;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <button>red</button>
+    <button>yellow</button>
+    <button>blue</button>
+    <button>black</button>
+    <button id="clear">white</button>
+    <input type="range" min="1" max="10">
+    <canvas id="canvas"></canvas>
+    <script>
+
+        window.addEventListener('load', function () {
+            let canvas = document.querySelector('#canvas');
+            let dc = canvas.getContext('2d');
+            canvas.width=800;
+            canvas.height=500;
+            let draw=false;
+            let color=null;
+            let radius=4;
+            document.addEventListener('click',(e)=>{
+                if(e.target.matches('button')) color=e.target.innerText;
+                if(e.target.matches('#clear')) redRaw();
+            })
+            document.addEventListener('input',(e)=>{
+                if(e.target.matches('input')) radius=e.target.value
+            })
+            function drawBall(x,y) {
+                dc.lineWidth=radius*2;
+                dc.lineTo(x,y);
+                dc.stroke();
+                dc.fillStyle = color;
+                dc.strokeStyle = color;
+                dc.beginPath();
+                dc.arc(x, y, radius, 0, Math.PI * 2, true);
+                dc.fill();
+                dc.beginPath();
+                dc.moveTo(x,y);
+                dc.closePath()
+               /*  dc.fillStyle = color;
+                dc.fillRect(x-radius/2,y-radius/2,radius,radius);
+                dc.fill() */
+                
+                
+            }
+            function redRaw(){
+                dc.clearRect(0,0,canvas.width,canvas.height)
+            }
+            canvas.addEventListener('mousedown',function (e) {
+                
+                draw=true;
+                
+            })
+            canvas.addEventListener('mouseup',function (e) {
+                draw=false;
+                dc.beginPath();
+            })
+            canvas.addEventListener('mousemove',function (e) {
+                var x=e.pageX-this.offsetLeft,y=e.pageY-this.offsetTop;
+                if(draw==true) drawBall(x,y)
+                
+            })
+            
+            
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        #canvas {
+            position: fixed;
+            /* z-index: -1; */
+            left: 0;
+            top: 0;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.1/dat.gui.min.js'></script>
+    <script>
+        (function () {
+            var canvasBody = document.getElementById("canvas");
+            var canvas = canvasBody.getContext('2d');
+            var w = canvasBody.width = window.innerWidth;
+            var h = canvasBody.height = window.innerHeight;
+            var opts = {
+                practicleAmound: 30,
+                backgroundColor: "#336699",
+                defaultSpeed: 1,
+                addedSpeed: 2,
+                practicleColor: "#fcfcfc",
+                defaultRadius: 2,
+                addedRadius: 2,
+                communicationRadius: 150,
+                LineColor:'rgb(255, 255, 255)'
+            };
+           
+            var practicles = [];
+            var Practickle = function (Xpos, Ypos) {
+                this.x = Xpos ? Xpos : Math.random() * w;
+                this.y = Ypos ? Ypos : Math.random() * h;
+
+                this.speed = opts.defaultSpeed + Math.random() * opts.addedSpeed;
+                this.directAngle = Math.floor(Math.random() * 360);
+                this.color = opts.practicleColor;
+                this.radius = opts.defaultRadius + Math.random() * opts.addedRadius;
+                this.d = {
+                    x: Math.cos(this.directAngle) * this.speed,
+                    y: Math.sin(this.directAngle) * this.speed
+                };
+                this.update = function () {
+                    this.border();
+                    this.x += this.d.x;
+                    this.y += this.d.y;
+                };
+                this.border = function () {
+                    /* if (this.x >= w || this.x < 0) this.d.x *= -1 */
+                    this.x >= w || this.x < 0 ? this.d.x *= -1 : this.d.x *= 1;
+                    this.y >= h || this.y < 0 ? this.d.y *= -1 : this.d.y *= 1;
+                    this.x > w ? this.x = w : this.x;
+                    this.y > h ? this.y = h : this.y;
+                    this.x < 0 ? this.x = 0 : this.x;
+                    this.y < 0 ? this.y = 0 : this.y;
+
+                };
+                this.draw = function () {
+                    canvas.beginPath();
+                    canvas.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    canvas.closePath();
+                    canvas.fillStyle = this.color;
+                    canvas.fill();
+
+                }
+
+            };
+            var CheckDisdance = function (x1, y1, x2, y2) {
+                return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            };
+            var communicatePoints = function (point1, father) {
+                for (var i = 0; i < father.length; i++) {
+                    var distance = CheckDisdance(point1.x, point1.y, father[i].x, father[i].y);
+                    var opacity = 1 - distance / opts.communicationRadius;
+                    if (opacity > 0) {
+                        canvas.lineWidth = opacity;
+                        canvas.strokeStyle = opts.LineColor;
+                        canvas.beginPath();
+                        canvas.moveTo(point1.x, point1.y);
+                        canvas.lineTo(father[i].x, father[i].y);
+                        canvas.closePath();
+                        canvas.stroke();
+                    }
+                }
+            };
+            function setup() {
+                for (var i = 0; i < opts.practicleAmound; i++) {
+                    practicles.push(new Practickle())
+                }
+                var gui = new dat.GUI();
+                gui.add( opts,"defaultRadius", 2, 10).min(0).max(10).step(1).name("defaultRadius");
+                gui.add( opts,"addedSpeed", 2, 10).min(0).max(10).step(1).name("addedSpeed");
+                gui.addColor(opts, 'practicleColor');
+                gui.addColor(opts, 'backgroundColor');
+                gui.addColor(opts, 'LineColor');
+                
+                
+                
+
+                window.requestAnimationFrame(loop)
+
+            };
+            function loop() {
+                canvas.fillStyle = opts.backgroundColor;
+                canvas.fillRect(0, 0, w, h)
+                for (var i = 0; i < practicles.length; i++) {
+                    practicles[i].update();
+                    practicles[i].draw();
+                }
+                for (var a = 0; a < practicles.length; a++) {
+                    communicatePoints(practicles[a], practicles);
+                }
+                window.requestAnimationFrame(loop)
+
+            };
+
+            setup()
+
+            window.addEventListener('resize', function () {
+                w = canvasBody.width = window.innerWidth;
+                h = canvasBody.height = window.innerHeight;
+            })
+            canvasBody.addEventListener('click', function (e) {
+                practicles.push(new Practickle(e.clientX, e.clientY))
+                console.log(practicles)
+            })
+            canvasBody.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+                practicles.splice(practicles.length - 1, 1);
+                console.log(practicles)
+            });
+
+
+
+
+
+        })()
+    </script>
+</body>
+
+</html>
