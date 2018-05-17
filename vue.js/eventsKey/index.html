@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+    <style>
+        .red{
+            background: red;
+        }
+        .blue{
+            background: blue;
+        }
+        .blue span,.red span{
+            color: wheat;}
+        .gitInfo img{
+            width: 150px;
+        }
+        </style>
+</head>
+<body>
+<div id="app">
+
+    <input type="text" @keyup="alertK">
+    pl enter to save
+    <p>
+        {{inputV}}
+    </p>
+    <hr>
+    <input type="text" @keyup.enter="saveStr">Enter
+    <p>{{inputStr}}</p>
+    <hr>
+
+    <input type="text"  @input="searchGit">
+    <div class="gitInfo">
+        <a :href="user.html_url">repos</a>
+        <p>{{user.login}}</p>
+        <img :src="user.avatar_url">
+    </div>
+
+
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            inputV:"",
+            inputStr:"",
+            user:[]
+        },
+        methods:{
+            alertK:function (e) {
+                if (e.keyCode===13) {
+                    this.inputV=e.target.value
+                }
+            },
+            saveStr:function (e) {
+                this.inputStr=e.target.value
+            },
+            searchGit:function (e) {
+
+                fetch('https://api.github.com/users/'+e.target.value,{
+                    headers: {"Authorization": "Basic Zm9tZW5rb3llZ29yOnpjbmh0LDIwMTU="}
+                })
+                    .then((res)=>res.json())
+                    .then((data)=>{
+                        this.user=data
+                    })
+            }
+
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+    <style>
+        .red{
+            background: red;
+        }
+        .blue{
+            background: blue;
+        }
+        .blue span,.red span{
+            color: wheat;
+        }
+        .canv{
+            width: 100%;
+            height: 500px;
+            background: rgba(133, 133, 133, 0.74);
+            display: flex;justify-content: center;align-items: center;
+        }
+        .canv p{
+            color: aliceblue;
+        }
+        .canv span{
+            width: 100px;
+            height: 50px;
+            background: blue;
+            text-align: center;
+            line-height: 50px;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>count: {{count}}</p>
+    <button @click="onMi" >-</button>
+    <button @click="onPl">+</button>
+    <hr>
+    <p>count2: {{count2}}</p>
+    <button @click="count2=count2-1" >-</button>
+    <button @click="count2++">+</button>
+    <hr>
+    <p :class="bg">countHover: <span>{{countHover}}</span></p>
+    <button @mouseover="overPl" >+</button>
+    <button @mouseover="overMi">-</button>
+    <hr>
+    <p >countHover2: {{countHover2}}</p>
+    <button @mouseover="countHover2++" >+</button>
+    <button @mouseover="countHover2=countHover2-1">-</button>
+    <hr>
+    <p >counter {{cntTitle}} cnt: {{cnt}}</p>
+    <button @click="plNum(5,'increased(5)',$event)" >+5</button>
+    <button @click="plNum(10,'increased(10)',$event)">+10</button>
+    <button @click="miNum(5,'decreased(5)',$event)" >-5</button>
+    <button @click="miNum(10,'decreased(10)',$event)">-10</button>
+    <hr>
+    <div class="canv" @mousemove="getCoords">
+       <p> x: {{canvX}} y: {{canvY}}</p>
+        <span @mousemove.stop="">stop</span>
+    </div>
+
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            count:0,
+            count2:0,
+            countHover:0,
+            countHover2:0,
+            bg:'',
+            cnt:0,
+            cntTitle:"",
+            canvX:0,
+            canvY:0,
+
+        },
+        methods:{
+            onPl:function () {
+                this.count++;
+            },
+            onMi:function () {
+                if (this.count===0) {
+                    this.count=0
+                } else{
+                    this.count=this.count-1;
+                }
+            },
+            overPl:function () {
+                this.countHover++;
+                this.bg='blue'
+            },
+            overMi:function () {
+                this.countHover=this.countHover-1;
+                this.bg='red'
+            },
+            plNum:function (num,str,e) {
+                this.cnt +=num;
+                this.cntTitle=str;
+                num===5?e.target.style.background='blue':e.target.style.background='green'
+            },
+            miNum:function (num,str,e) {
+                this.cnt=this.cnt-num;
+                this.cntTitle=str;
+                num===5?e.target.style.background='yellow':e.target.style.background='red'
+            },
+            getCoords:function (e) {
+                this.canvX=e.clientX;
+                this.canvY=e.clientY;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
